@@ -1,0 +1,157 @@
+\documentclass[plainsections,36pt]{sciposter}
+
+\usepackage[brazil]{babel}		% Idioma do documento
+\usepackage{xcolor}			    % Controle das cores
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{wallpaper}
+\usepackage{wrapfig}
+\usepackage{amsfonts,amssymb,amsmath,amsthm}
+\usepackage{multicol}
+\usepackage{anyfontsize}
+
+\providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
+%EndMSIPreambleData
+\setcounter{tocdepth}{4}
+
+%opening
+\definecolor{amarelo}{HTML}{FFCC00}
+\definecolor{verde}{HTML}{006600}
+\renewcommand{\papertype}{custom}
+\setlength{\paperwidth}{90cm}
+\setlength{\paperheight}{100cm}
+\renewcommand{\setpspagesize}{
+\ifthenelse{\equal{\orientation}{portrait}}{
+\special{papersize=90cm,100cm}
+}{\special{papersize=90cm,100cm}}}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\textheight}{84cm}
+\setlength{\textwidth}{75.5cm}
+\setlength{\oddsidemargin}{2.4cm}
+\setlength{\evensidemargin}{0cm}
+\setlength{\parindent}{0.25in}
+\setlength{\parskip}{0.25in}
+\setlength{\pdfpagewidth}{90cm}
+\setlength{\pdfpageheight}{100cm}
+\newcommand\BackgroundPic{
+\put(-82,65){
+\parbox[b][\paperheight]{\paperwidth}{
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,
+keepaspectratio]{poster-xi-sic.jpg}
+\vfill
+}}}
+\setlength{\columnseprule}{0pt}
+
+\renewcommand{\titlesize}{\fontsize{84}{45}\selectfont }
+\newcommand{\largo}{\fontsize{36}{40}\selectfont }
+\makeatletter
+
+
+
+% Redefine a função section
+\renewcommand\section{\@startsection {section}{1}{\z@}{-1ex \@plus -0.5ex \@minus -.1ex}{0.8ex \@plus.1ex}{\normalfont\largo\bfseries}}
+                        
+\makeatother
+\vspace{-1cm}
+
+\def\thesection{}
+%%% Título %%%
+\title{\vspace{-0.2cm} \hspace{-15cm}\textcolor{amarelo}{\parbox{0.9\textwidth}{DIGITE O TÍTULO AQUI }}}
+%%%
+\usepackage{parskip}
+\begin{document}
+
+\AddToShipoutPicture{\BackgroundPic}
+\makeatletter
+\AddToShipoutPicture{%
+            \setlength{\@tempdimb}{.5\paperwidth}%
+            \setlength{\@tempdimc}{.5\paperheight}%
+            \setlength{\unitlength}{1pt}%
+            \put(\strip@pt\@tempdimb,\strip@pt\@tempdimc){%
+                    }%
+}
+\makeatother
+\maketitle
+\mbox{}\vspace{6cm}
+
+\begin{center}
+\textbf{\textit{\large Autor 1, Autor 2}}\\
+Centro de Engenharia, Modelagem e Ciências Sociais Aplicadas da UFABC\\
+Av. dos Estados, 5001, Santo André, SP\\
+\textit{\{email1, email2\}@ufabc.edu.br}
+\end{center}
+
+\vspace{1.2cm}
+\begin{multicols}{2}
+\paragraph{Resumo:} Este é um modelo de pôster que descreve o estilo a ser usado na confecção dos pôsteres para exibição no VIII Encontro de Iniciação Científica.
+
+\textbf{Palavras-chave:} Modelo de pôster, VIII Encontro de Iniciação Científica.
+
+\section*{Introdução}
+
+Integer sapien sapien, sodales non sollicitudin sed, vestibulum volutpat odio. In sit amet interdum lectus.
+Nulla venenatis, enim eu viverra posuere, orci justo auctor nulla, sed pellentesque nisl est sed mi.
+Vivamus neque nisi, dignissim quis tincidunt et, tincidunt id est. Integer magna tortor, consequat et viverra eget,
+condimentum et arcu. Fusce id odio non ipsum tempus blandit. Proin rhoncus dui ut turpis volutpat tempor tempus sapien varius. 
+Proin rhoncus, massa a interdum vulputate, augue quam vehicula ante, ut luctus turpis lorem a nunc.
+Mauris ac lorem enim, a vehicula arcu. Maecenas eu nunc urna, sit amet pretium neque.
+Cras molestie lorem sed risus lacinia eu tempor nisi ultricies.
+Pellentesque felis lorem, tristique ut vehicula sit amet, ultricies a ipsum.
+
+\section*{Figuras, Tabelas e Equações}
+
+Exemplo de figura dado pela Figura \ref{fig:exemplo}, exemplo de tabela dado pela Tabela \ref{tab:exemplo} e exemplo de equação dado pela equação (\ref{eq:exemplo}).
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=6cm]{poster-xi-sic.jpg}
+\caption{Exemplo de Figura. Fonte: XI SIC.}
+\label{fig:exemplo}
+\end{figure}
+
+\begin{table}[!htb]
+	\caption{Exemplo de Tabela}
+	\centering
+	\begin{tabular}{ccc}
+	\hline
+	Exemplo 1 & Exemplo 2 \\
+	\hline
+	10 & 10 \\
+	\hline
+	20 & 20 \\
+	\hline
+	\end{tabular}
+	\label{tab:exemplo}
+\end{table}
+
+\begin{equation}
+\sum_{i=1}^{N} \frac{x_i}{N} = \frac{x_1+x_2+\ldots+x_N}{N}, 	
+\label{eq:exemplo}
+\end{equation}
+
+
+Integer sapien sapien, sodales non sollicitudin sed, vestibulum volutpat odio. In sit amet interdum lectus.
+Nulla venenatis, enim eu viverra posuere, orci justo auctor nulla, sed pellentesque nisl est sed mi.
+
+\section*{Conclusão}
+Suspendisse eleifend ullamcorper dignissim. Quisque ut tortor non massa fringilla vehicula. 
+Aenean ac metus orci, ut tincidunt leo. In ullamcorper ultricies lorem, nec rhoncus lorem sodales quis.
+In pulvinar ornare imperdiet. Maecenas a venenatis eros. Curabitur ac metus at dolor blandit tempor.
+Vestibulum sit amet est sit amet risus blandit placerat. Suspendisse ullamcorper eros nec dui cursus vestibulum. 
+
+\section*{Como citar} As citações e referências devem ser feitas respeitando-se as normas definidas pela ABNT. Somente deverão ser apresentadas as referências citadas no referido pôster. Nas referências no texto citar o nome do autor e o ano da publicação (SANTOS, 2003) .
+
+\section*{Referências}
+
+SANTOS, Bruno A. Aspectos conceituais e arquiteturais para a criação de linhagens de agentes de software cognitivos e situados. 2003. 130f. Dissertação (Mestrado em Tecnologia – Manufatura Integrada por Computador) – Centro Federal de Educação Tecnológica de Minas Gerais, Belo Horizonte, 2003.
+
+\section*{Agradecimentos}
+Os alunos devem incluir em seus pôsteres uma seção de agradecimento com dizeres do tipo: Este trabalho foi financiado pelo Programa de Iniciação Científica da UFABC (PIC/UFABC) ou pelo CNPq (para bolsistas CNPq). 
+
+\end{multicols}
+\end{document}
