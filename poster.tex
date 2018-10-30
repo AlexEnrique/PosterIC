@@ -1,4 +1,4 @@
-\documentclass[plainsections,36pt]{sciposter}
+\documentclass[plainsections,32pt]{sciposter}
 
 \usepackage[brazil]{babel}		% Idioma do documento
 \usepackage{xcolor}			    % Controle das cores
@@ -9,6 +9,8 @@
 \usepackage{wrapfig}
 \usepackage{amsfonts,amssymb,amsmath,amsthm}
 \usepackage{multicol}
+\usepackage{anyfontsize}
+\usepackage{braket}
 \usepackage{anyfontsize}
 
 \providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
@@ -54,14 +56,14 @@ keepaspectratio]{poster-xi-sic.jpg}
 
 
 % Redefine a função section
-\renewcommand\section{\@startsection {section}{1}{\z@}{-1ex \@plus -0.5ex \@minus -.1ex}{0.8ex \@plus.1ex}{\normalfont\largo\bfseries}}
-                        
+\renewcommand\section{\@startsection {section}{1}{\z@}{-1ex \@plus -0.5ex \@minus -.1ex}{0.8ex \@plus.1ex}{\largo\bfseries\fontsize{28}{26}\selectfont}}
+
 \makeatother
 \vspace{-1cm}
 
 \def\thesection{}
 %%% Título %%%
-\title{\vspace{-0.2cm} \hspace{-15cm}\textcolor{amarelo}{\parbox{0.9\textwidth}{DIGITE O TÍTULO AQUI }}}
+\title{\vspace{-4cm} \hspace{-28cm}\textcolor{amarelo}{\parbox{0.9\textwidth}{Mapeamento Clássico-Quântico: \\ Um Estudo do Modelo de Ising em Duas Dimensões}}}
 %%%
 \usepackage{parskip}
 \begin{document}
@@ -77,81 +79,93 @@ keepaspectratio]{poster-xi-sic.jpg}
 }
 \makeatother
 \maketitle
-\mbox{}\vspace{6cm}
+\mbox{}\vspace{0cm}
 
 \begin{center}
-\textbf{\textit{\large Autor 1, Autor 2}}\\
-Centro de Engenharia, Modelagem e Ciências Sociais Aplicadas da UFABC\\
+\textbf{\textit{\large Alex Enrique Crispim}}\\
+Centro de Ciências Naturais e Humanas - UFABC\\
 Av. dos Estados, 5001, Santo André, SP\\
-\textit{\{email1, email2\}@ufabc.edu.br}
+\textit{alex.enrique@ufabc.edu.br}
 \end{center}
 
-\vspace{1.2cm}
+\vspace{1.5cm}
 \begin{multicols}{2}
-\paragraph{Resumo:} Este é um modelo de pôster que descreve o estilo a ser usado na confecção dos pôsteres para exibição no VIII Encontro de Iniciação Científica.
+\paragraph{Resumo:} Neste trabalho, estudou-se a técnica do \textit{mapeamento clássico-quântico}, aplicado ao Modelo de Ising. O objetivo final do projeto era extrair informações da versão quântica do modelo unidimensão usando este formalismo. Isso se deu calculando computacionalmente observávais quântico, utilizando o modelo clássico bidimensional.
 
-\textbf{Palavras-chave:} Modelo de pôster, VIII Encontro de Iniciação Científica.
+\textbf{Palavras-chave:} Modelo de Ising, Mecânica Quântica, Mecânica Estatística, Transição Quântica de Fase, Sistemas Quânticos de Muitos Corpos. Sistemas Fortemente Correlacionados.
 
 \section*{Introdução}
+O Modelo de Ising surgiu na década de 1920 como um modelo clássico simplificado para se estudar sistemas ferromagnéticos. Este modelo foi o primeiro a apresentar uma transição de fase, fato mostrado pela solução exata encontrada por L. Onsager (Onsager, 1944).
 
-Integer sapien sapien, sodales non sollicitudin sed, vestibulum volutpat odio. In sit amet interdum lectus.
-Nulla venenatis, enim eu viverra posuere, orci justo auctor nulla, sed pellentesque nisl est sed mi.
-Vivamus neque nisi, dignissim quis tincidunt et, tincidunt id est. Integer magna tortor, consequat et viverra eget,
-condimentum et arcu. Fusce id odio non ipsum tempus blandit. Proin rhoncus dui ut turpis volutpat tempor tempus sapien varius. 
-Proin rhoncus, massa a interdum vulputate, augue quam vehicula ante, ut luctus turpis lorem a nunc.
-Mauris ac lorem enim, a vehicula arcu. Maecenas eu nunc urna, sit amet pretium neque.
-Cras molestie lorem sed risus lacinia eu tempor nisi ultricies.
-Pellentesque felis lorem, tristique ut vehicula sit amet, ultricies a ipsum.
+De forma geral, acredita-se que a função de partição de um modelo quântico de dimensão $D$ pode ser mapeada exatamente na função de partição de um modelo clássico de dimensão $D+1$. Este mapeamento tem sido fundamental para o estudo de teorias fortemente correlacionadas. Em especial, a aplicação deste formalismo ao Modelo de Ising leva à formulação de um modelo quântico de fundamental importância para o estudo de transições quânticas de fase e o entendimento de transições de fase de segunda ordem.
 
-\section*{Figuras, Tabelas e Equações}
+\section*{O Modelo de Ising} O Modelo Clássico de Ising em duas dimensões corresponde a uma rede de variáveis clássicas $\sigma_i$ que assumem valores $\pm 1$. Essas se encontram arranjados em uma rede bidimensional, normalmente quadrada e tem Hamiltoniana
+\begin{equation}
+  H_{cl.} = -J \sum_{\braket{i, j}} \sigma_i \sigma_j,
+\end{equation}
+com $\braket{i, j}$ representando os $j$ primeiros vizinhos de $i$.
 
-Exemplo de figura dado pela Figura \ref{fig:exemplo}, exemplo de tabela dado pela Tabela \ref{tab:exemplo} e exemplo de equação dado pela equação (\ref{eq:exemplo}).
+A função de partição desta Hamiltoniana clássica, pode ser mapeada exatamente na função de partição da Hamiltoniana
+\begin{equation}
+  \hat{H}_{\Delta} = -J\sum_i \sigma_{i}^z \sigma_{i+1}^z + \Delta \sigma_i^x
+\end{equation}
+chamada \textit{Hamiltoniana Quântica de Ising Unidimensional}, com $\sigma^x$ e $\sigma^z$ representandos as matrizes $x$ e $z$ de Pauli.
 
-\begin{figure}[htb]
-\centering
-\includegraphics[width=6cm]{poster-xi-sic.jpg}
-\caption{Exemplo de Figura. Fonte: XI SIC.}
-\label{fig:exemplo}
+A solução de Onsager mostra que o modelo clássico apresenta uma transição de fase à temperatura $T_c$ dada por
+\begin{equation}
+  \beta_c J = \frac{\log(1 + \sqrt{2})}{2}
+  , \quad \beta_c = \frac{1}{kT_c},
+\end{equation}
+onde $k$ é a constante de Boltzman. Para o modelo quântico, a transição de fase se manifesta como $\Delta = 1$.
+
+Utilizando a técnica do mapeamento clássico-quântico, é possível estudar o modelo quântico de Ising na transição de fase, por meio do modelo clássico. As vantagens se dão em termos de menor complexidade computacional e no uso de uma teoria clássica (mecânica estatística clássica), costumeiramente mais simples de se trabalhar.
+
+\section*{Desigualdades de Bell e Correlações Quânticas}
+Na década de 60, John Bell Derivou uma desigualdade sobre o valor esperado de variáveis aleatórias, sob as hipóteses do paradoxo EPR (paradoxo de Einstein-Podolsky-Rosen) (Bell, 1964). De forma reformulada e mais geral, a desigualdade afirma que o valor esperado da quantidade $QS + RS + RT - QT$, onde $Q, R, S, T$ são variáveis aleatórias que assumem valores $\pm 1$, é tal que
+\begin{equation}
+  \braket{QS + RS + RT - QT} \leq 2.
+\end{equation}
+Esta desigualdade se funda nos argumentos de Einstein, Podolsky  e Rosen acerca de uma possível incompleteza da Mecânica Quântica (Einstein \textit{et al}, 1935). O interesse nesta desigualdade foi a verificação de que a mesma é incorreta; o mundo comporta-se conforme a Mecânica Quântica.
+
+Em especial, para o estado
+\begin{equation*}
+  \ket{s} = \frac{\ket{\uparrow \downarrow} - \ket{\downarrow \uparrow}}{\sqrt{2}}
+\end{equation*}
+o valor esperado na forma de (4) para os observáveis
+\begin{equation}
+  Q = \sigma_1^z, \quad R = \sigma_1^x, \quad S =  \frac{-\sigma_2^z - \sigma_2^x}{\sqrt{2}}, \quad T =  \frac{\sigma_2^z - \sigma_2^x}{\sqrt{2}}
+\end{equation}
+é igual a $2\sqrt{2} > 2$.
+
+Supondo que primeiros vizinhos da cadeia unidimensional quântica pudesse estar emaranhados no estado $\ket{s}$, uma simulação do valor esperado (4) para estes observáveis deveria, em algum momento, violar a desigualdade de Bell. Para tal, simulou-se uma rede de spins clássios com a Hamiltoniana (1), calculando os observáveis $\sigma_{i}^x$, $\sigma_{i}^z$, $\sigma_{i+1}^x$ e $\sigma_{i+1}^z$ por meio do mapeamento entre os sistemas. Com estes observáveis e os observáveis definidos em (5), pode-se fazer o estudo requerido da desigualdade (4), indicando a presença do estado $\ket{s}$.
+
+
+\section*{Resultados}
+\begin{figure}
+  \center
+  \includegraphics[scale = 1]{result3.pdf}
+  \caption{}
 \end{figure}
 
-\begin{table}[!htb]
-	\caption{Exemplo de Tabela}
-	\centering
-	\begin{tabular}{ccc}
-	\hline
-	Exemplo 1 & Exemplo 2 \\
-	\hline
-	10 & 10 \\
-	\hline
-	20 & 20 \\
-	\hline
-	\end{tabular}
-	\label{tab:exemplo}
-\end{table}
-
-\begin{equation}
-\sum_{i=1}^{N} \frac{x_i}{N} = \frac{x_1+x_2+\ldots+x_N}{N}, 	
-\label{eq:exemplo}
-\end{equation}
 
 
-Integer sapien sapien, sodales non sollicitudin sed, vestibulum volutpat odio. In sit amet interdum lectus.
-Nulla venenatis, enim eu viverra posuere, orci justo auctor nulla, sed pellentesque nisl est sed mi.
 
 \section*{Conclusão}
-Suspendisse eleifend ullamcorper dignissim. Quisque ut tortor non massa fringilla vehicula. 
-Aenean ac metus orci, ut tincidunt leo. In ullamcorper ultricies lorem, nec rhoncus lorem sodales quis.
-In pulvinar ornare imperdiet. Maecenas a venenatis eros. Curabitur ac metus at dolor blandit tempor.
-Vestibulum sit amet est sit amet risus blandit placerat. Suspendisse ullamcorper eros nec dui cursus vestibulum. 
-
-\section*{Como citar} As citações e referências devem ser feitas respeitando-se as normas definidas pela ABNT. Somente deverão ser apresentadas as referências citadas no referido pôster. Nas referências no texto citar o nome do autor e o ano da publicação (SANTOS, 2003) .
 
 \section*{Referências}
 
-SANTOS, Bruno A. Aspectos conceituais e arquiteturais para a criação de linhagens de agentes de software cognitivos e situados. 2003. 130f. Dissertação (Mestrado em Tecnologia – Manufatura Integrada por Computador) – Centro Federal de Educação Tecnológica de Minas Gerais, Belo Horizonte, 2003.
+Onsager, L. (1944). ``Discussion'', Nuovo Cimento (suppl.) 6 , 261.
+
+Bell, John. (1964). ``On the Einstein Podolsky Rosen Paradox''. Physics. 1 (3): 195–200.
+
+Einstein, A.; Podolsky, B.; Rosen, N. (1935). ``Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?''. Physical Review. 47 (10): 777–780
 
 \section*{Agradecimentos}
-Os alunos devem incluir em seus pôsteres uma seção de agradecimento com dizeres do tipo: Este trabalho foi financiado pelo Programa de Iniciação Científica da UFABC (PIC/UFABC) ou pelo CNPq (para bolsistas CNPq). 
+Os alunos devem incluir em seus pôsteres uma seção de agradecimento com dizeres do tipo: Este trabalho foi financiado pelo Programa de Iniciação Científica da UFABC (PIC/UFABC) ou pelo CNPq (para bolsistas CNPq).
+
+
+\clearpage % remover ao final
 
 \end{multicols}
+
 \end{document}
