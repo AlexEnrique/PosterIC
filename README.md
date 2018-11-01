@@ -1,3 +1,3 @@
 # PosterIC
 
-Repositório para armazenamento do meu pôster para o XI congresso de iniciação científica da UFABC, 2018.
+Repositório para armazenamento do meu pôster para o VIII congresso de iniciação científica da UFABC, 2018.
