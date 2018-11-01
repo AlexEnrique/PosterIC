@@ -1,4 +1,4 @@
-\documentclass[plainsections,32pt]{sciposter}
+\documentclass[plainsections, 32pt]{sciposter}
 
 \usepackage[brazil]{babel}		% Idioma do documento
 \usepackage{xcolor}			    % Controle das cores
@@ -44,12 +44,12 @@
 \vfill
 \centering
 \includegraphics[width=\paperwidth,height=\paperheight,
-keepaspectratio]{poster-xi-sic.jpg}
+keepaspectratio]{poster-xi-sic-2.jpg}
 \vfill
 }}}
 \setlength{\columnseprule}{0pt}
 
-\renewcommand{\titlesize}{\fontsize{84}{45}\selectfont }
+\renewcommand{\titlesize}{\fontsize{68}{40}\selectfont }
 \newcommand{\largo}{\fontsize{36}{40}\selectfont }
 \makeatletter
 
@@ -59,11 +59,11 @@ keepaspectratio]{poster-xi-sic.jpg}
 \renewcommand\section{\@startsection {section}{1}{\z@}{-1ex \@plus -0.5ex \@minus -.1ex}{0.8ex \@plus.1ex}{\largo\bfseries\fontsize{28}{26}\selectfont}}
 
 \makeatother
-\vspace{-1cm}
+\vspace{-3cm}
 
 \def\thesection{}
 %%% Título %%%
-\title{\vspace{-4cm} \hspace{-28cm}\textcolor{amarelo}{\parbox{0.9\textwidth}{Mapeamento Clássico-Quântico: \\ Um Estudo do Modelo de Ising em Duas Dimensões}}}
+\title{\vspace{-3.3cm} \hspace{-28cm}\textcolor{amarelo}{\parbox{0.9\textwidth}{Mapeamento Clássico-Quântico: Um Estudo do Modelo de Ising em Duas Dimensões}}}
 %%%
 \usepackage{parskip}
 \begin{document}
@@ -82,87 +82,115 @@ keepaspectratio]{poster-xi-sic.jpg}
 \mbox{}\vspace{0cm}
 
 \begin{center}
-\textbf{\textit{\large Alex Enrique Crispim}}\\
+\textbf{{\large Alex Enrique Crispim}}\\
 Centro de Ciências Naturais e Humanas - UFABC\\
 Av. dos Estados, 5001, Santo André, SP\\
 \textit{alex.enrique@ufabc.edu.br}
 \end{center}
 
-\vspace{1.5cm}
+\vspace{1cm}
 \begin{multicols}{2}
-\paragraph{Resumo:} Neste trabalho, estudou-se a técnica do \textit{mapeamento clássico-quântico}, aplicado ao Modelo de Ising. O objetivo final do projeto era extrair informações da versão quântica do modelo unidimensão usando este formalismo. Isso se deu calculando computacionalmente observávais quântico, utilizando o modelo clássico bidimensional.
+\paragraph{Resumo:} Neste trabalho, estudou-se a técnica do \textit{mapeamento clássico-quântico}, aplicada ao Modelo de Ising. O objetivo final do projeto era extrair informações da versão quântica do modelo unidimensional usando este formalismo. Isso se deu calculando computacionalmente observávais quânticos, utilizando o modelo clássico em duas dimensões.
 
 \textbf{Palavras-chave:} Modelo de Ising, Mecânica Quântica, Mecânica Estatística, Transição Quântica de Fase, Sistemas Quânticos de Muitos Corpos. Sistemas Fortemente Correlacionados.
 
 \section*{Introdução}
-O Modelo de Ising surgiu na década de 1920 como um modelo clássico simplificado para se estudar sistemas ferromagnéticos. Este modelo foi o primeiro a apresentar uma transição de fase, fato mostrado pela solução exata encontrada por L. Onsager (Onsager, 1944).
+\vspace{-3mm}
+De forma geral, acredita-se, que a função de partição de um modelo quântico de dimensão $D$ pode ser mapeada exatamente na função de partição de um modelo clássico de dimensão $D+1$.
+Este mapeamento tem sido fundamental para o estudo de teorias fortemente correlacionadas. Em especial, a aplicação deste formalismo ao Modelo de Ising leva à formulação de um modelo quântico de fundamental importância para o estudo de transições quânticas de fase e o entendimento de transições de fase de segunda ordem.
 
-De forma geral, acredita-se que a função de partição de um modelo quântico de dimensão $D$ pode ser mapeada exatamente na função de partição de um modelo clássico de dimensão $D+1$. Este mapeamento tem sido fundamental para o estudo de teorias fortemente correlacionadas. Em especial, a aplicação deste formalismo ao Modelo de Ising leva à formulação de um modelo quântico de fundamental importância para o estudo de transições quânticas de fase e o entendimento de transições de fase de segunda ordem.
-
-\section*{O Modelo de Ising} O Modelo Clássico de Ising em duas dimensões corresponde a uma rede de variáveis clássicas $\sigma_i$ que assumem valores $\pm 1$. Essas se encontram arranjados em uma rede bidimensional, normalmente quadrada e tem Hamiltoniana
+\section*{O Modelo de Ising}
+\vspace{-3mm}
+O Modelo Clássico de Ising em duas dimensões corresponde a uma rede de variáveis clássicas $\sigma_i$ que assumem valores $\pm 1$ (spin para cima ou para baixo). Essas se encontram arranjadas em uma rede bidimensional, normalmente quadrada (Figura 1). O modelo apresenta uma transição de fase à temperatura $T_c$ finita e tem a Hamiltoniana $H_{Ising}$, apresentadas em (1) (Ising, 1925; Onsager, 1944).
 \begin{equation}
-  H_{cl.} = -J \sum_{\braket{i, j}} \sigma_i \sigma_j,
+  H_{Ising} = - J \sum_{\braket{i, j}} \sigma_i \sigma_j,
+  \qquad \frac{J}{k_b T_c} = \frac{\log(1+\sqrt{2})}{2}
 \end{equation}
-com $\braket{i, j}$ representando os $j$ primeiros vizinhos de $i$.
+com $\braket{i, j}$ representando os $j$ primeiros vizinhos de $i$ e $k_b$ sendo a constante de Boltzmann.
 
-A função de partição desta Hamiltoniana clássica, pode ser mapeada exatamente na função de partição da Hamiltoniana
+\begin{figure}
+  \center
+  \includegraphics[scale = .9]{lattice.png}
+  \caption{Exemplo de uma rede quadrada de spins. Fonte: https://quantumoptics.at/}
+\end{figure}
+
+\vspace{-15mm}
+A função de partição desta Hamiltoniana clássica, pode ser mapeada exatamente na função de partição da \textit{Hamiltoniana Quântica de Ising Unidimensional} (Figura 2), $\hat{H}_\Delta$, da forma
 \begin{equation}
-  \hat{H}_{\Delta} = -J\sum_i \sigma_{i}^z \sigma_{i+1}^z + \Delta \sigma_i^x
+  \hat{H}_{\Delta} = -J\sum_i \hat{\sigma}_{i}^z \hat{\sigma}_{i+1}^z + \Delta \hat{\sigma}_i^x.
 \end{equation}
-chamada \textit{Hamiltoniana Quântica de Ising Unidimensional}, com $\sigma^x$ e $\sigma^z$ representandos as matrizes $x$ e $z$ de Pauli.
+Para este modelo quântico, a transição de fase ocorre quando $\Delta = 1$.
 
-A solução de Onsager mostra que o modelo clássico apresenta uma transição de fase à temperatura $T_c$ dada por
-\begin{equation}
-  \beta_c J = \frac{\log(1 + \sqrt{2})}{2}
-  , \quad \beta_c = \frac{1}{kT_c},
-\end{equation}
-onde $k$ é a constante de Boltzman. Para o modelo quântico, a transição de fase se manifesta como $\Delta = 1$.
+\begin{figure}
+  \center
+  \includegraphics[scale = .45]{chain.png}
+  \caption{Cadeia de spins quânticos unidimensional. Fonte: (Veltman, 2016)}
+\end{figure}
 
-Utilizando a técnica do mapeamento clássico-quântico, é possível estudar o modelo quântico de Ising na transição de fase, por meio do modelo clássico. As vantagens se dão em termos de menor complexidade computacional e no uso de uma teoria clássica (mecânica estatística clássica), costumeiramente mais simples de se trabalhar.
+\vspace{-15mm}
+Utilizando a técnica do mapeamento clássico-quântico, é possível estudar este modelo quântico na transição de fase, por meio do modelo clássico bidimensional. As vantagens se dão em termos de menor complexidade computacional e no uso de uma teoria clássica (mecânica estatística clássica), costumeiramente mais simples de se trabalhar e mais intuitiva.
 
 \section*{Desigualdades de Bell e Correlações Quânticas}
-Na década de 60, John Bell Derivou uma desigualdade sobre o valor esperado de variáveis aleatórias, sob as hipóteses do paradoxo EPR (paradoxo de Einstein-Podolsky-Rosen) (Bell, 1964). De forma reformulada e mais geral, a desigualdade afirma que o valor esperado da quantidade $QS + RS + RT - QT$, onde $Q, R, S, T$ são variáveis aleatórias que assumem valores $\pm 1$, é tal que
+\vspace{-3mm}
+Na década de 60, John Bell derivou uma desigualdade acerca do valor esperado de variáveis aleatórias $Q, R, S, T$ que assumem valores $\pm 1$, sob as hipóteses do paradoxo EPR (paradoxo de Einstein-Podolsky-Rosen) (Einstein \textit{et al}, 1935; Bell, 1964). A desigualdade afirma que o valor esperado da quantidade $QS + RS + RT - QT$ é tal que
 \begin{equation}
   \braket{QS + RS + RT - QT} \leq 2.
 \end{equation}
-Esta desigualdade se funda nos argumentos de Einstein, Podolsky  e Rosen acerca de uma possível incompleteza da Mecânica Quântica (Einstein \textit{et al}, 1935). O interesse nesta desigualdade foi a verificação de que a mesma é incorreta; o mundo comporta-se conforme a Mecânica Quântica.
+O interesse nesta desigualdade foi a verificação de que a mesma se faz incompatível com experimentos, mostrando que a natureza comporta-se conforme a Mecânica Quântica prevê.
 
-Em especial, para o estado
+Em especial, para o estados emaranhados
 \begin{equation*}
-  \ket{s} = \frac{\ket{\uparrow \downarrow} - \ket{\downarrow \uparrow}}{\sqrt{2}}
+  \ket{\Psi^-} = \frac{\ket{\uparrow \downarrow} - \ket{\downarrow \uparrow}}{\sqrt{2}},
+  \qquad
+  \ket{\Phi^+} = \frac{\ket{\uparrow \uparrow} + \ket{\downarrow \downarrow}}{\sqrt{2}}
 \end{equation*}
-o valor esperado na forma de (4) para os observáveis
+com os observáveis
+\begin{equation*}
+  Q = Q^\prime = \sigma_1^z, \quad R = R^\prime = \sigma_1^x, \quad S = -S^\prime = \frac{-\sigma_2^z - \sigma_2^x}{\sqrt{2}}, \quad T = -T^\prime =  \frac{\sigma_2^z - \sigma_2^x}{\sqrt{2}}
+\end{equation*}
+tem-se os valores esperados
 \begin{equation}
-  Q = \sigma_1^z, \quad R = \sigma_1^x, \quad S =  \frac{-\sigma_2^z - \sigma_2^x}{\sqrt{2}}, \quad T =  \frac{\sigma_2^z - \sigma_2^x}{\sqrt{2}}
+  \braket{\Psi^-|(QS + RS + RT - QT)|\Psi^-} = \braket{\Phi^+|(Q^\prime S^\prime + R^\prime S^\prime + R^\prime T^\prime - Q^\prime T^\prime)|\Phi^+} = 2\sqrt{2}  > 2.
 \end{equation}
-é igual a $2\sqrt{2} > 2$.
 
-Supondo que primeiros vizinhos da cadeia unidimensional quântica pudesse estar emaranhados no estado $\ket{s}$, uma simulação do valor esperado (4) para estes observáveis deveria, em algum momento, violar a desigualdade de Bell. Para tal, simulou-se uma rede de spins clássios com a Hamiltoniana (1), calculando os observáveis $\sigma_{i}^x$, $\sigma_{i}^z$, $\sigma_{i+1}^x$ e $\sigma_{i+1}^z$ por meio do mapeamento entre os sistemas. Com estes observáveis e os observáveis definidos em (5), pode-se fazer o estudo requerido da desigualdade (4), indicando a presença do estado $\ket{s}$.
-
+Para este trabalho, avaliou-se os valores esperados em (4) para primeiros vizinhos de uma cadeia quântica de Ising. Se, para alguma temperatura, o sistema se encontrasse nos estados $\ket{\Psi^-}$ ou $\ket{\Phi^+}$, a desigualdade de Bell deveria ser violada.
 
 \section*{Resultados}
+A Figura 3 mostra o gráfico em função da temperatura (unidades arbitrárias, definindo $k_b = 1$). A transição de fase ocorre para a temperatura aproximada de $2,27$. Dos gráficos, é possível perceber um aumento das correlações próximo à transição de fase. Além disso, nota-se que a desigualdade de Bell é violada apenas para o estado $\ket{\Phi^+}$, como esperado de um sistema ferromagnético, pois nesse, os spins tendem a serem encontrados alinhados.
+\vspace{2mm}
 \begin{figure}
   \center
-  \includegraphics[scale = 1]{result3.pdf}
-  \caption{}
+  \includegraphics[scale = .7]{result3.pdf}
+  \includegraphics[scale = .7]{bell.pdf}
+  \caption{Valores esperados $\braket{\Psi^-|(QS + RS + RT - QT)|\Psi^-} $ (gráfico em azul) e $ \braket{\Phi^+|(Q^\prime S^\prime + R^\prime S^\prime + R^\prime T^\prime - Q^\prime T^\prime)|\Phi^+}$ (gráfico em roxo) em função da temperatura (unidades dadas definindo-se a constante de Boltzmann igual a 1).}
 \end{figure}
 
 
-
+\vspace{-5mm}
 
 \section*{Conclusão}
+\vspace{-2mm}
+Este trabalho mostrou que na transição de fase do Modelo Quântico de Ising unidimensional as correlações entre os spins aumentam. Por meio do estudo de dois funcionais de Bell, mostrou-se que não ocorre a formação dos estados $\ket{\Psi^-}$, na média temporal, e que os primeiros vizinhos encontram-se emaranhados no estado $\ket{\Phi^+}$ para $T < T_C$. Por fim, o resultado obtido mostra a violação da Desigualdade de Bell, verificando que a cadeia de spins se comporta como previsto pela Mecânica Quântica.
+
 
 \section*{Referências}
+Ising, E. (1925). Beitrag zur Theorie des Ferromagnetismus. Zeitschrift für Physik, 31:253–258.
 
 Onsager, L. (1944). ``Discussion'', Nuovo Cimento (suppl.) 6 , 261.
 
+Einstein, A.; Podolsky, B.; Rosen, N. (1935). ``Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?''. Physical Review. 47 (10): 777–780.
+
 Bell, John. (1964). ``On the Einstein Podolsky Rosen Paradox''. Physics. 1 (3): 195–200.
 
-Einstein, A.; Podolsky, B.; Rosen, N. (1935). ``Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?''. Physical Review. 47 (10): 777–780
+Veltman, T. (2016). Heisenberg Spin Chains with
+Boundaries and Quantum Groups. Master Thesis, University of Amsterdam.
 
 \section*{Agradecimentos}
-Os alunos devem incluir em seus pôsteres uma seção de agradecimento com dizeres do tipo: Este trabalho foi financiado pelo Programa de Iniciação Científica da UFABC (PIC/UFABC) ou pelo CNPq (para bolsistas CNPq).
+Agradeço ao meu orientador, professor Eduardo Peres Novais de Sá, por me apresentar aos vários temas estudados durante este projeto e pelo acompanhamento ao longo da minha jornada acadêmica na UFABC, estando sempre disposto a ajudar de alguma forma.
 
+Agradeço de forma geral a cada uma das pessoas que me ajudaram das mais diversas formas, ao longo do projeto e na jornada até o presente.
+
+Em especial, reservo um agradecimento ao Programa de Iniciação Científica PIBIC do CNPq, o qual financiou este trabalho.
 
 \clearpage % remover ao final
 
